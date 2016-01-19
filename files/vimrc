@@ -1,0 +1,32 @@
+set nocompatible "required for vundle
+filetype off "required for vundle
+
+set ts=4
+set sw=4
+set expandtab
+set smarttab
+set ignorecase
+set smartcase
+syntax on
+
+autocmd BufRead,BufNewFile  *.txt setlocal tw=80
+autocmd BufRead,BufNewFile  *.txt setlocal spell spelllang=en_gb
+au GUIEnter * simalt ~x
+
+" Make backspace behave correctly.
+set backspace=indent,eol,start
+set guifont=Consolas:h10
+
+" rtp (runtimepaths) is a list of comma seperated paths, the first 
+" of which is the vimfiles directory
+let $VIMFILESDIR=split(&rtp, ",")[0]
+
+set rtp+=$VIMFILESDIR/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+call vundle#end()
+
+
+filetype plugin indent on " required by vundle
