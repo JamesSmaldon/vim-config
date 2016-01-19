@@ -23,7 +23,7 @@ let $VIMFILESDIR=split(&rtp, ",")[0]
 
 set rtp+=$VIMFILESDIR/bundle/Vundle.vim
 
-call vundle#begin()
+call vundle#begin('$VIMFILESDIR/bundle/')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 call vundle#end()
