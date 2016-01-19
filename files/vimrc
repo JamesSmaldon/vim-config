@@ -1,22 +1,6 @@
 set nocompatible "required for vundle
 filetype off "required for vundle
 
-set ts=4
-set sw=4
-set expandtab
-set smarttab
-set ignorecase
-set smartcase
-set number
-syntax on
-
-autocmd BufRead,BufNewFile  *.txt setlocal tw=80
-autocmd BufRead,BufNewFile  *.txt setlocal spell spelllang=en_gb
-au GUIEnter * simalt ~x
-
-" Make backspace behave correctly.
-set backspace=indent,eol,start
-set guifont=Consolas:h10
 
 " rtp (runtimepaths) is a list of comma seperated paths, the first 
 " of which is the vimfiles directory
@@ -27,6 +11,31 @@ set rtp+=$VIMFILESDIR/bundle/Vundle.vim
 call vundle#begin('$VIMFILESDIR/bundle/')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'sjl/badwolf'
 call vundle#end()
 
 filetype plugin indent on " required by vundle
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab " tabs are spaces
+set smarttab
+set ignorecase " ignore case when searching
+set smartcase
+
+set number " enable line numbers
+syntax on " syntax highlighting
+colorscheme badwolf
+set cursorline " highlight current line
+set wildmenu " graphical auto-complete menu for tab completion
+set showmatch " highlight matching parentheses
+set hlsearch " highlight search matches
+
+autocmd BufRead,BufNewFile  *.txt setlocal tw=80
+autocmd BufRead,BufNewFile  *.txt setlocal spell spelllang=en_gb
+au GUIEnter * simalt ~x
+
+" Make backspace behave correctly.
+set backspace=indent,eol,start
+set guifont=Consolas:h10
