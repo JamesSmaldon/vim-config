@@ -33,7 +33,4 @@ ECHO Installing vundle.
 mkdir %VUNDLEDIR%
 git clone https://github.com/VundleVim/Vundle.vim.git %USERPROFILE%\vimfiles\bundle\Vundle.vim
 
-ECHO Installing plugins
-vim +PluginInstall +qall
-
 ECHO All done...
