@@ -38,4 +38,7 @@ au GUIEnter * simalt ~x
 
 " Make backspace behave correctly.
 set backspace=indent,eol,start
-set guifont=Consolas:h10
+
+if has("win32")
+    set guifont=Consolas:h10
+endif
