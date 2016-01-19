@@ -6,7 +6,7 @@ To install on windows, run:
 install.bat
 ```
 
-See also (VIM quick reference)[quickref.md]
+See also [VIM quick reference](quickref.md)
 
 ## Troubleshooting
 ### Vundle and gvim 7.3 on windows
