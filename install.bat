@@ -10,7 +10,7 @@ IF %ERRORLEVEL% NEQ 0 ECHO Please install curl first (see vundle windows install
 
 REM If _vimrc file already exists, prompt user to overwrite it.
 IF EXIST %USERPROFILE%\_vimrc (
-    set /p OVERWRITEVIMRC=vimrc file already exists, do you want to overwrite it? [yn] 
+    set /p OVERWRITEVIMRC="vimrc file already exists, do you want to overwrite it? [yn] "
     IF "%OVERWRITEVIMRC%" EQU "y" (
         move /Y %USERPROFILE%\_vimrc %USERPROFILE%\_vimrc_bak
     ) ELSE (
@@ -31,6 +31,7 @@ IF EXIST %VUNDLEDIR% (
 
 ECHO Installing vundle.
 mkdir %VUNDLEDIR%
-git clone https://github.com/VundleVim/Vundle.vim.git %USERPROFILE%\vimfiles\bundle\Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git %VUNDLEDIR%\Vundle.vim
 
-ECHO All done...
+ECHO Installing plugins
+gvim +PluginInstall +qall
