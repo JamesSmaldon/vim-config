@@ -10,8 +10,9 @@ set rtp+=$VIMFILESDIR/bundle/Vundle.vim
 
 call vundle#begin('$VIMFILESDIR/bundle/')
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'sjl/badwolf'
+Plugin 'tpope/vim-fugitive'             " Git wrapper plugin
+Plugin 'sjl/badwolf'                    " Colour scheme
+Plugin 'pearofducks/ansible-vim'        " Ansible yaml syntax highlighting
 call vundle#end()
 
 filetype plugin indent on " required by vundle
@@ -34,7 +35,6 @@ set hlsearch " highlight search matches
 
 autocmd BufRead,BufNewFile  *.txt setlocal tw=80
 autocmd BufRead,BufNewFile  *.txt setlocal spell spelllang=en_gb
-au GUIEnter * simalt ~x
 
 " Make backspace behave correctly.
 set backspace=indent,eol,start
