@@ -14,6 +14,7 @@ Plugin 'tpope/vim-fugitive'             " Git wrapper plugin
 Plugin 'sjl/badwolf'                    " Colour scheme
 Plugin 'pearofducks/ansible-vim'        " Ansible yaml syntax highlighting
 Plugin 'mattn/emmet-vim'                " Generates HTML tags
+Plugin 'ctrlpvim/ctrlp.vim'
 call vundle#end()
 
 filetype plugin indent on " required by vundle
