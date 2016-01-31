@@ -14,7 +14,9 @@ Plugin 'tpope/vim-fugitive'             " Git wrapper plugin
 Plugin 'sjl/badwolf'                    " Colour scheme
 Plugin 'pearofducks/ansible-vim'        " Ansible yaml syntax highlighting
 Plugin 'mattn/emmet-vim'                " Generates HTML tags
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy search for files etc.
+Plugin 'vim-airline/vim-airline.vim'    " powerline style plugin in pure vimscript
+Plugin 'scrooloose/nerdtree'            " Tree based navigation of filesystem
 call vundle#end()
 
 filetype plugin indent on " required by vundle
