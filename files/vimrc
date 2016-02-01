@@ -19,6 +19,10 @@ call vundle#end()
 
 filetype plugin indent on " required by vundle
 
+" Make the ctrlp plugin display up to 100 results rather than the default of
+" 10
+let g:ctrlp_match_window = 'results:100'
+
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
