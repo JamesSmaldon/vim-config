@@ -28,6 +28,7 @@ set expandtab " tabs are spaces
 set smarttab
 set ignorecase " ignore case when searching
 set smartcase
+set laststatus=2    "Always display the status bar.
 
 set number " enable line numbers
 syntax on " syntax highlighting
