@@ -50,4 +50,6 @@ set backspace=indent,eol,start
 
 if has("win32")
     set guifont=Consolas:h10
+else
+    set guifont=Inconsolata\ 9
 endif
