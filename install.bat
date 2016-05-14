@@ -27,7 +27,7 @@ ECHO Copying new vimrc file.
 copy .\files\vimrc %USERPROFILE%\_vimrc
 
 ECHO Copying tips file.
-copy .\files\vimtips %USERPROFILE%\vimfiles\vimtips
+copy .\files\vimtips.md %USERPROFILE%\vimfiles\vimtips.md
 
 SET VUNDLEDIR=%USERPROFILE%\vimfiles\bundle\
 

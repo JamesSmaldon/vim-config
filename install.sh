@@ -18,7 +18,7 @@ echo "Copying new vimrc file."
 cp ./files/vimrc $VIMRC
 
 echo "Copying tips file."
-cp ./files/vimtips $HOME/.vim/vimtips
+cp ./files/vimtips.md $HOME/.vim/vimtips.md
 
 VUNDLEDIR=$HOME/.vim/bundle
 

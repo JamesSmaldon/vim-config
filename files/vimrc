@@ -6,7 +6,7 @@ filetype off "required for vundle
 " of which is the vimfiles directory
 let $VIMFILESDIR=split(&rtp, ",")[0]
 
-let $VIMTIPS="$VIMFILESDIR/vimtips"
+let $VIMTIPS="$VIMFILESDIR/vimtips.md"
 
 set rtp+=$VIMFILESDIR/bundle/Vundle.vim
 
