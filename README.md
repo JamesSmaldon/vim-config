@@ -6,6 +6,11 @@ To install on windows, run:
 install.bat
 ```
 
+To install on linux, run:
+```
+install.sh
+```
+
 See also [VIM tips](files/vimtips.md)
 
 ## Troubleshooting
