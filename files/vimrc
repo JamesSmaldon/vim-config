@@ -56,3 +56,6 @@ if has("win32")
 else
     set guifont=Inconsolata\ 9
 endif
+
+" Open explorer window for the path containing the current file.
+map <C-e> :!start explorer %:p:h:gs?\/?\\\\\\?<CR>
