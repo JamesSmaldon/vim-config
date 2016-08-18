@@ -21,3 +21,8 @@ Yank the text you want to copy, then enter command mode and type:
 ```
 Calling it without the cmd part means you don't get to see 
 the program output.
+
+## Displaying and opening recent files
+To list recently opened files - :ol[dfiles]
+To list files and then prompt to open one - :bro[wse] ol[dfiles][1]
+    The ! means discard the current buffer.
