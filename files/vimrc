@@ -41,6 +41,7 @@ set cursorline " highlight current line
 set wildmenu " graphical auto-complete menu for tab completion
 set showmatch " highlight matching parentheses
 set hlsearch " highlight search matches
+set path=.,,** " Search path for opening new files etc.
 
 autocmd BufRead,BufNewFile  *.txt setlocal tw=80
 autocmd BufRead,BufNewFile  *.txt setlocal spell spelllang=en_gb
