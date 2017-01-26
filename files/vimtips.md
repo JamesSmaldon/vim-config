@@ -1,31 +1,44 @@
 # Useful VIM tips
 
-## Editing .vimrc
-### Reload .vimrc without restarting vim
-```
-:so % "If you're editing it
-:so $MYVIMRC "otherwise
-```
-## Searching
-Find next occurance of the word under the cursor - '*'
+# Searching
+## Cheat Sheet
+ * Search forward/backword for exact word under the cursor - '*'/'#' e.g. whole words only
+ * Search forward/backword for inexact word under the cursor - 'g*'/'g#'  
+ * Search for selected text: y/C-r" (yank selection, start search, copy to command)
 
+## Case sensitivity
+ * set ignorecase: make all searches case insensitive.
+ * for case insensitive/sensitive: /pattern\c /pattern\C
+
+## Pattern Searching
+ * Copy current found word to the command line: press /, C-r, C-w
+ * An empty pattern search will repeat the last search.
+ * Add a number to find the nth occurance. E.g. 3/pattern will search for the 3rd occurance of pattern.
+ * Find 3rd occurrance of word under cursor: 3*
+ * Put cursor at end of next "hello" /hello/e
+
+# Cutting and Pasting
 ## Pasting text into the command buffer
 Yank the text you want to copy, then enter command mode and type:
 ```
 <c-R> "
 ```
 
-## Run shell command in windows without suspending vim
-```
-!start cmd /c "my app.exe" & pause
-```
-Calling it without the cmd part means you don't get to see 
-the program output.
+# Marks
+## Cheat Sheet
 
-## Displaying and opening recent files
-To list recently opened files - :ol[dfiles]
-To list files and then prompt to open one - :bro[wse] ol[dfiles][1]
-    The ! means discard the current buffer.
+ * ma: set bookmark "a" in current file
+ * mA: set global bookmark "A"
+ * `a: go to bookmark "a" (line and col)
+ * 'a: go to bookmark "a" (line only)
+ * :marks: list current marks
+ * ]`: jump to next lowercase mark
+ * [`: jump to previous lowercase mark
+ * `.: jump to position of last change in buffer.
+ * ``: jump back to where you were before you jumped.
+ * `0, `1,...,`9: jump to nth last file edited
+ * `": jump to position where you last exited the file.
+ * :delmarks!: delete all marks in the current buffer.
 
 # Buffers
 ## Cheat Sheet
@@ -78,3 +91,24 @@ To list files and then prompt to open one - :bro[wse] ol[dfiles][1]
  * #CTRL-w_: Sets the height to the size indicated by the preceding "#"
  * :only: Close all windows but the current one
  * CTRL-wn: Opens a new window with a new buffer
+
+# Recent Files
+## Displaying and opening recent files
+To list recently opened files - :ol[dfiles]
+To list files and then prompt to open one - :bro[wse] ol[dfiles][1]
+    The ! means discard the current buffer.
+
+# Editing .vimrc
+### Reload .vimrc without restarting vim
+```
+:so % "If you're editing it
+:so $MYVIMRC "otherwise
+```
+
+# Running commands
+## Run shell command in windows without suspending vim
+```
+!start cmd /c "my app.exe" & pause
+```
+Calling it without the cmd part means you don't get to see 
+the program output.
