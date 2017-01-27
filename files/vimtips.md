@@ -10,6 +10,20 @@
  * set ignorecase: make all searches case insensitive.
  * for case insensitive/sensitive: /pattern\c /pattern\C
 
+## Searching Across Files
+ * :noautocmd vimgrep /pattern/gj **/*.js: Find all instances of pattern in *.js files recursively. Don't jump to first result.
+    - The noautocmd stops vim from using autocmds to open the files, which is slow. 
+ * :cw open the quickfix list to see results, this is global
+ * :lw open the location list (for when you use lvimgrep), this is local to the current buffer.
+
+## Search and Replace Across Files
+ * You need to use the arglist for this:
+```
+:arg *.cpp 
+:argadd *.h
+:arg (list current args)
+:argdo %s/pattern/replace/ge | update
+
 ## Pattern Searching
  * Copy current found word to the command line: press /, C-r, C-w
  * An empty pattern search will repeat the last search.
