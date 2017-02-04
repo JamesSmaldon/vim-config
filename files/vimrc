@@ -17,6 +17,7 @@ Plugin 'sjl/badwolf'                    " Colour scheme
 Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy search for files etc.
 Plugin 'vim-airline/vim-airline'        " powerline style plugin in pure vimscript
 Plugin 'scrooloose/nerdtree'            " Tree based navigation of filesystem
+Plugin 'dkprice/vim-easygrep'           " Find and replace text across multiple files.
 call vundle#end()
 
 filetype plugin indent on " required by vundle
@@ -34,7 +35,6 @@ set ignorecase " ignore case when searching
 set smartcase
 set laststatus=2    "Always display the status bar.
 set incsearch " Make searches incremental
-set nowrapscan " Stop search from wrapping to top after last result.
 
 set number " enable line numbers
 syntax on " syntax highlighting
