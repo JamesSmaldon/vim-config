@@ -38,6 +38,9 @@ Yank the text you want to copy, then enter command mode and type:
 <c-R> "
 ```
 
+# Auto completion
+ * set complete-=i: Disable scanning of included files (which can be very slow)
+
 # Marks
 ## Cheat Sheet
 
