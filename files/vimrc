@@ -10,16 +10,18 @@ let $VIMTIPS="$VIMFILESDIR/vimtips.md"
 
 set rtp+=$VIMFILESDIR/bundle/Vundle.vim
 
-call vundle#begin('$VIMFILESDIR/bundle/')
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'             " Git wrapper plugin
-Plugin 'sjl/badwolf'                    " Colour scheme
-Plugin 'pearofducks/ansible-vim'        " Ansible yaml syntax highlighting
-Plugin 'mattn/emmet-vim'                " Generates HTML tags
-Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy search for files etc.
-Plugin 'vim-airline/vim-airline'        " powerline style plugin in pure vimscript
-Plugin 'scrooloose/nerdtree'            " Tree based navigation of filesystem
-call vundle#end()
+if has('gui_running')
+    call vundle#begin('$VIMFILESDIR/bundle/')
+    Plugin 'VundleVim/Vundle.vim'
+    Plugin 'tpope/vim-fugitive'             " Git wrapper plugin
+    Plugin 'sjl/badwolf'                    " Colour scheme
+    Plugin 'pearofducks/ansible-vim'        " Ansible yaml syntax highlighting
+    Plugin 'mattn/emmet-vim'                " Generates HTML tags
+    Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy search for files etc.
+    Plugin 'vim-airline/vim-airline'        " powerline style plugin in pure vimscript
+    Plugin 'scrooloose/nerdtree'            " Tree based navigation of filesystem
+    call vundle#end()
+endif
 
 filetype plugin indent on " required by vundle
 
@@ -38,7 +40,11 @@ set laststatus=2    "Always display the status bar.
 
 set number " enable line numbers
 syntax on " syntax highlighting
-colorscheme badwolf
+
+if has('gui_running')
+    silent! colorscheme badwolf
+endif
+
 set cursorline " highlight current line
 set wildmenu " graphical auto-complete menu for tab completion
 set showmatch " highlight matching parentheses
@@ -55,3 +61,7 @@ if has("win32")
 else
     set guifont=Inconsolata\ 9
 endif
+
+" Open explore window for current buffer path
+nmap <F11> :!start explorer /e,%:p:h<CR>
+imap <F11> <Esc><F11>
