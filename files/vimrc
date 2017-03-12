@@ -15,11 +15,10 @@ if has('gui_running')
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'tpope/vim-fugitive'             " Git wrapper plugin
     Plugin 'sjl/badwolf'                    " Colour scheme
-    Plugin 'pearofducks/ansible-vim'        " Ansible yaml syntax highlighting
-    Plugin 'mattn/emmet-vim'                " Generates HTML tags
     Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy search for files etc.
     Plugin 'vim-airline/vim-airline'        " powerline style plugin in pure vimscript
     Plugin 'scrooloose/nerdtree'            " Tree based navigation of filesystem
+    Plugin 'dkprice/vim-easygrep'           " Find and replace text across multiple files.
     call vundle#end()
 endif
 
@@ -37,6 +36,7 @@ set smarttab
 set ignorecase " ignore case when searching
 set smartcase
 set laststatus=2    "Always display the status bar.
+set incsearch " Make searches incremental
 
 set number " enable line numbers
 syntax on " syntax highlighting
@@ -49,6 +49,7 @@ set cursorline " highlight current line
 set wildmenu " graphical auto-complete menu for tab completion
 set showmatch " highlight matching parentheses
 set hlsearch " highlight search matches
+set path=.,,** " Search path for opening new files etc.
 
 autocmd BufRead,BufNewFile  *.txt setlocal tw=80
 autocmd BufRead,BufNewFile  *.txt setlocal spell spelllang=en_gb

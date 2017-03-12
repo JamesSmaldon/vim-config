@@ -34,3 +34,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git $VUNDLEDIR/Vundle.vim
 
 echo "Installing plugins"
 gvim +PluginInstall +qall
+
+echo "Don't forget to install font:"
+echo "sudo apt-get install fonts-inconsolata"
