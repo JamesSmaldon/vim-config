@@ -10,16 +10,18 @@ let $VIMTIPS="$VIMFILESDIR/vimtips.md"
 
 set rtp+=$VIMFILESDIR/bundle/Vundle.vim
 
-call vundle#begin('$VIMFILESDIR/bundle/')
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'             " Git wrapper plugin
-Plugin 'sjl/badwolf'                    " Colour scheme
-Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy search for files etc.
-Plugin 'vim-airline/vim-airline'        " powerline style plugin in pure vimscript
-Plugin 'scrooloose/nerdtree'            " Tree based navigation of filesystem
-Plugin 'dkprice/vim-easygrep'           " Find and replace text across multiple files.
-Plugin 'ludovicchabant/vim-lawrencium'  " mercurial support
-call vundle#end()
+if has('gui_running')
+    call vundle#begin('$VIMFILESDIR/bundle/')
+    Plugin 'VundleVim/Vundle.vim'
+    Plugin 'tpope/vim-fugitive'             " Git wrapper plugin
+    Plugin 'sjl/badwolf'                    " Colour scheme
+    Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy search for files etc.
+    Plugin 'vim-airline/vim-airline'        " powerline style plugin in pure vimscript
+    Plugin 'scrooloose/nerdtree'            " Tree based navigation of filesystem
+    Plugin 'dkprice/vim-easygrep'           " Find and replace text across multiple files.
+    Plugin 'ludovicchabant/vim-lawrencium'  " mercurial support
+    call vundle#end()
+endif
 
 filetype plugin indent on " required by vundle
 
@@ -42,7 +44,11 @@ set incsearch " Make searches incremental
 
 set number " enable line numbers
 syntax on " syntax highlighting
-colorscheme badwolf
+
+if has('gui_running')
+    silent! colorscheme badwolf
+endif
+
 set cursorline " highlight current line
 set wildmenu " graphical auto-complete menu for tab completion
 set showmatch " highlight matching parentheses
@@ -61,5 +67,6 @@ else
     set guifont=Inconsolata\ 9
 endif
 
-" Open explorer window for the path containing the current file.
-map <C-e> :!start explorer %:p:h:gs?\/?\\\\\\?<CR>
+" Open explore window for current buffer path
+nmap <F11> :!start explorer /e,%:p:h<CR>
+imap <F11> <Esc><F11>
