@@ -1,5 +1,11 @@
 # Useful VIM tips
 
+# Commands
+## Cheat Sheet
+ * C-f when in command mode gives you the command history window.
+ * C-r" pastes the buffer into the command
+ * C-r/ pastes in the last search command
+
 # Searching
 ## Cheat Sheet
  * Search forward/backword for exact word under the cursor - '*'/'#' e.g. whole words only

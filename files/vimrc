@@ -18,6 +18,7 @@ Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy search for files etc.
 Plugin 'vim-airline/vim-airline'        " powerline style plugin in pure vimscript
 Plugin 'scrooloose/nerdtree'            " Tree based navigation of filesystem
 Plugin 'dkprice/vim-easygrep'           " Find and replace text across multiple files.
+Plugin 'ludovicchabant/vim-lawrencium'  " mercurial support
 call vundle#end()
 
 filetype plugin indent on " required by vundle
@@ -25,6 +26,9 @@ filetype plugin indent on " required by vundle
 " Make the ctrlp plugin display up to 100 results rather than the default of
 " 10
 let g:ctrlp_match_window = 'results:100'
+
+" Add VCS support to vim-airline plugin
+let g:airline#extensions#branch#use_vcscommand = 1
 
 set tabstop=4
 set shiftwidth=4
