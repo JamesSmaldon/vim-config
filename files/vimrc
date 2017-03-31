@@ -20,6 +20,7 @@ if has('gui_running')
     Plugin 'scrooloose/nerdtree'            " Tree based navigation of filesystem
     Plugin 'dkprice/vim-easygrep'           " Find and replace text across multiple files.
     Plugin 'ludovicchabant/vim-lawrencium'  " mercurial support
+    Plugin 'yegappan/mru'                   " A better recent files list
     call vundle#end()
 endif
 

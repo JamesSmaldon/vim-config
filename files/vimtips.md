@@ -43,6 +43,15 @@ Yank the text you want to copy, then enter command mode and type:
 ```
 <c-R> "
 ```
+Yanking multiple things using a named register.
+- You can select multiple lines etc by yanking the first one into a named buffer:
+  ```
+  "ay
+  ```
+  and then for the other lines using the uppercase register name to append rather than overwrite
+  ```
+  "Ay
+  ```
 
 # Auto completion
  * set complete-=i: Disable scanning of included files (which can be very slow)
@@ -116,7 +125,13 @@ Yank the text you want to copy, then enter command mode and type:
  * CTRL-wn: Opens a new window with a new buffer
 
 # Recent Files
-## Displaying and opening recent files
+## MRU plugin
+ * :MRU - open most recently used files list.
+ * :MRU <search term> - filter list by search term
+ * In MRU list:
+    * o to open the file, t to open in tab
+
+## Built in functionality - Displaying and opening recent files
 To list recently opened files - :ol[dfiles]
 To list files and then prompt to open one - :bro[wse] ol[dfiles][1]
     The ! means discard the current buffer.
