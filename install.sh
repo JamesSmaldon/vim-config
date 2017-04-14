@@ -14,6 +14,8 @@ then
   esac
 fi
 
+mkdir -p $HOME/.vim
+
 echo "Copying new vimrc file."
 cp ./files/vimrc $VIMRC
 
