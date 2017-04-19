@@ -11,6 +11,9 @@
  * Search forward/backword for exact word under the cursor - '*'/'#' e.g. whole words only
  * Search forward/backword for inexact word under the cursor - 'g*'/'g#'  
  * Search for selected text: y/C-r" (yank selection, start search, copy to command)
+ * Jump to first match - :ij /foo
+ * Jump to second match - :ij 2 /foo
+ * List matches - :ilist /foo
 
 ## Case sensitivity
  * set ignorecase: make all searches case insensitive.
