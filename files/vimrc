@@ -72,6 +72,10 @@ endif
 nmap <F11> :!start explorer /e,%:p:h<CR>
 imap <F11> <Esc><F11>
 
+" Open command prompt for current buffer path
+nmap <F12> :!start cmd %:p:h<CR>
+imap <F12> <Esc><F12>
+
 " Refresh current file
 map <F5> :e<CR>G
 imap <F5> <Esc><F5>

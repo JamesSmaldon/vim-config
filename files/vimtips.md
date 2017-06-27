@@ -153,3 +153,10 @@ To list files and then prompt to open one - :bro[wse] ol[dfiles][1]
 ```
 Calling it without the cmd part means you don't get to see 
 the program output.
+
+
+# Spelling
+ * z= - when cursor over mispelled word to give list of corrections.
+ * zg - mark spelling as good
+ * ]s - move to next mispelling
+ * [s - move to previous mispelling
