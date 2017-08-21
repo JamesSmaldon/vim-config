@@ -160,3 +160,11 @@ the program output.
  * zg - mark spelling as good
  * ]s - move to next mispelling
  * [s - move to previous mispelling
+
+# Regex
+ * s:<back>:blah:g - search and replace "back" with word boundary symbols (e.g. matches whole words at start or end of line)
+ * s:/my/path/with/slashes/:/another/path/:g - Use ":" separate to avoid having to escape slashes
+ * \(blah\) - back reference, can be referred back to with \1 etc.
+ * \{-} - non-greedy quantifier, match as few as possible.
+ * :%s:EXPECT_TRUE(contains_array(\(.\{-}\),\(.\{-}\),\(.\{-}\))):EXPECT_EQ(get_array(\1,\2),\3):gc 
+     - replace e.g. EXPECT_TRUE(contains_array(a, b, c)) with EXPECT_EQ(get_array(a, b), c)
