@@ -127,6 +127,17 @@ Yanking multiple things using a named register.
  * :only: Close all windows but the current one
  * CTRL-wn: Opens a new window with a new buffer
 
+# Folding
+ * foldenable/nofoldenable: enable/disable folding
+ * za: Toggle current fold
+ * zo/zc: Open/Close current fold
+ * zR: Open all folds
+ * zM: Close all folds
+ * set foldmethod={syntax, indent, ...}: set foldmethod
+ * set foldnestmax=10: set max number of folds in the file.
+ * set foldminlines=5: don't fold blocks smaller than 5 lines
+ * set foldlevelstart=99: Start with all folds open (0 is all closed)
+
 # Recent Files
 ## MRU plugin
  * :MRU - open most recently used files list.

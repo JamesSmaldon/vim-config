@@ -56,6 +56,16 @@ set showmatch " highlight matching parentheses
 set hlsearch " highlight search matches
 set path=.,,** " Search path for opening new files etc.
 
+" Folding
+set foldenable " disable folding blocks.
+set foldnestmax=1 " Don't do nested folding
+set foldlevelstart=99 " Start with all folds open
+set foldminlines=5 " Don't bother folding small functions
+set foldmethod=syntax " Fold using indentation (good for python)
+au FileType python setlocal foldmethod=indent " syntax folding doesn't work for python, use indent instead (but only for current buffer).
+" remap space to toggle fold under the cursor.
+nnoremap <space> za 
+
 autocmd BufRead,BufNewFile  *.txt setlocal tw=80
 autocmd BufRead,BufNewFile  *.txt setlocal spell spelllang=en_gb
 
