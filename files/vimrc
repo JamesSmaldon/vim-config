@@ -2,7 +2,7 @@ set nocompatible "required for vundle
 filetype off "required for vundle
 
 
-" rtp (runtimepaths) is a list of comma seperated paths, the first 
+" rtp (runtimepaths) is a list of comma seperated paths, the first
 " of which is the vimfiles directory
 let $VIMFILESDIR=split(&rtp, ",")[0]
 
@@ -40,7 +40,7 @@ set softtabstop=4
 set expandtab " tabs are spaces
 set smarttab
 set ignorecase " ignore case when searching
-set smartcase
+set smartcase " except when search term has capital letter
 set laststatus=2    "Always display the status bar.
 set incsearch " Make searches incremental
 
@@ -65,7 +65,7 @@ set foldminlines=5 " Don't bother folding small functions
 set foldmethod=syntax " Fold using indentation (good for python)
 au FileType python setlocal foldmethod=indent " syntax folding doesn't work for python, use indent instead (but only for current buffer).
 " remap space to toggle fold under the cursor.
-nnoremap <space> za 
+nnoremap <space> za
 
 autocmd BufRead,BufNewFile  *.txt setlocal tw=80
 autocmd BufRead,BufNewFile  *.txt setlocal spell spelllang=en_gb
@@ -90,3 +90,19 @@ imap <F12> <Esc><F12>
 " Refresh current file
 map <F5> :e<CR>G
 imap <F5> <Esc><F5>
+
+" Function to remove whitespace from the end of all lines in the file.
+function! TrimTrailingWS ()
+    if search('\s\+$', 'cnw') " if we find any spaces before end of line
+        :%s/\s\+$//g " Perform global search and replace of spaces at end of lines.
+    endif
+endfunction
+
+" Highlight first character in line that goes over 80/100 chars
+highlight ColorColumn ctermbg=magenta guibg=gray27
+call matchadd('ColorColumn', '\%81v', 100)
+call matchadd('ColorColumn', '\%101v', 100)
+
+" Show undesirable characters
+set listchars=tab:>>,nbsp:_,trail:.
+set list
