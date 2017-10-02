@@ -9,19 +9,6 @@ let $VIMFILESDIR=split(&rtp, ",")[0]
 let $VIMTIPS="$VIMFILESDIR/vimtips.md"
 let $VSTIPS="$VIMFILESDIR/vstips.md"
 
-" If in GUI mode, open vimtips file in a seperate tab.
-function OpenVimTips()
-    " Open new tab and view vimtips in readonly mode.
-    tab sview $VIMTIPS
-    " Switch to the next tab, causing us to wrap round to the first file we
-    " opened.
-    tabN
-endfunction
-
-if has('gui_running')
-    autocmd VimEnter * call OpenVimTips() 
-endif
-
 set rtp+=$VIMFILESDIR/bundle/Vundle.vim
 
 if has('gui_running')
