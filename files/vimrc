@@ -79,6 +79,10 @@ else
     set guifont=Inconsolata\ 9
 endif
 
+" Open vimtips rather than help when F1 pressed.
+nmap <F1> :tabe $VIMTIPS<CR>
+imap <F1> <Esc><F1>
+
 " Open explore window for current buffer path
 nmap <F11> :!start explorer /e,%:p:h<CR>
 imap <F11> <Esc><F11>
