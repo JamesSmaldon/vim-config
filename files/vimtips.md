@@ -179,3 +179,7 @@ the program output.
  * \{-} - non-greedy quantifier, match as few as possible.
  * :%s:EXPECT_TRUE(contains_array(\(.\{-}\),\(.\{-}\),\(.\{-}\))):EXPECT_EQ(get_array(\1,\2),\3):gc 
      - replace e.g. EXPECT_TRUE(contains_array(a, b, c)) with EXPECT_EQ(get_array(a, b), c)
+
+# Undo
+ * :earlier 1h - Go back 1 hour.
+ * :later 1h - Go forward 1 hour.

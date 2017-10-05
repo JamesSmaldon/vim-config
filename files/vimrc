@@ -73,6 +73,10 @@ autocmd BufRead,BufNewFile  *.txt setlocal spell spelllang=en_gb
 " Make backspace behave correctly.
 set backspace=indent,eol,start
 
+" Make underscores act as word boundaries, this is useful when doing commands
+" like ciw on strings like my_variable_name.
+set iskeyword-=_
+
 if has("win32")
     set guifont=Consolas:h10
 else
