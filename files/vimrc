@@ -22,6 +22,8 @@ if has('gui_running')
     Plugin 'dkprice/vim-easygrep'           " Find and replace text across multiple files.
     Plugin 'ludovicchabant/vim-lawrencium'  " mercurial support
     Plugin 'yegappan/mru'                   " A better recent files list
+    " Provides motions (prefixed by ,) that mean word boundaries in camel case and underscore notation are respected.
+    Plugin 'vim-scripts/camelcasemotion'
     call vundle#end()
 endif
 
