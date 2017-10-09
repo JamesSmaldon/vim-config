@@ -40,6 +40,10 @@
  * Find 3rd occurrance of word under cursor: 3*
  * Put cursor at end of next "hello" /hello/e
 
+# Repeating commands
+ * 100@: - Repeat the last normal command 100 times 
+ * . - repeat the last edit
+
 # Cutting and Pasting
 ## Pasting text into the command buffer
 Yank the text you want to copy, then enter command mode and type:
@@ -183,3 +187,6 @@ the program output.
 # Undo
  * :earlier 1h - Go back 1 hour.
  * :later 1h - Go forward 1 hour.
+
+# Python
+ * :py vim.current.buffer.append(str(random.randint(0,50))) - generate a random number and append to the buffer.
