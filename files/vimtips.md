@@ -40,6 +40,9 @@
  * Find 3rd occurrance of word under cursor: 3*
  * Put cursor at end of next "hello" /hello/e
 
+# Working with Code
+ * diB - Delete all text between brackets.
+
 # Cutting and Pasting
 ## Pasting text into the command buffer
 Yank the text you want to copy, then enter command mode and type:
