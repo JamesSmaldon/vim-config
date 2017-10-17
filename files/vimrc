@@ -69,8 +69,11 @@ au FileType python setlocal foldmethod=indent " syntax folding doesn't work for 
 " remap space to toggle fold under the cursor.
 nnoremap <space> za
 
-autocmd BufRead,BufNewFile  *.txt setlocal tw=80
-autocmd BufRead,BufNewFile  *.txt setlocal spell spelllang=en_gb
+augroup textfiles
+    autocmd!
+    autocmd BufRead,BufNewFile  *.txt setlocal tw=80
+    autocmd BufRead,BufNewFile  *.txt setlocal spell spelllang=en_gb
+augroup END
 
 " Make backspace behave correctly.
 set backspace=indent,eol,start
@@ -109,9 +112,12 @@ function! TrimTrailingWS ()
 endfunction
 
 " Highlight first character in line that goes over 80/100 chars
-highlight ColorColumn ctermbg=magenta guibg=gray27
-call matchadd('ColorColumn', '\%81v', 100)
-call matchadd('ColorColumn', '\%101v', 100)
+augroup highlightlonglines
+    autocmd!
+    autocmd FileType python,cpp highlight ColorColumn ctermbg=magenta guibg=gray27
+    autocmd FileType python,cpp call matchadd('ColorColumn', '\%81v', 100)
+    autocmd FileType python,cpp call matchadd('ColorColumn', '\%101v', 100)
+augroup END
 
 " Show undesirable characters
 set listchars=tab:>>,nbsp:_,trail:.
