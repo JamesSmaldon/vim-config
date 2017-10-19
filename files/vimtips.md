@@ -3,8 +3,12 @@
 # Commands
 ## Cheat Sheet
  * C-f when in command mode gives you the command history window.
- * C-r" pastes the buffer into the command
+ * C-r" pastes the default register into the command
+ * C-ra pastes the a register to the command.
+ * C-rC-o" pastes the default register into the command without escaping control chars etc.
  * C-r/ pastes in the last search command
+ * ":p pastes the last command you used into the buffer
+ * :@" execute command in the default register
 
 # Searching
 ## Cheat Sheet
