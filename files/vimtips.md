@@ -70,6 +70,13 @@ Yanking multiple things using a named register.
 # Auto completion
  * set complete-=i: Disable scanning of included files (which can be very slow)
 
+# Sorting lines by column
+ * :sort n - sort numerically by the first number on the line.
+ * :sort n /.*\%3v/ - sort numerically (n) by the third virtual column
+    - virtual columns ignore the difference between tabs and spaces
+    - the pattern ignores all text up to virtual column three and then sorts on what follows (the 3rd col text).
+ * This also works with visual selections of lines as well.
+
 # Marks
 ## Cheat Sheet
 
