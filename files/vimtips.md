@@ -29,6 +29,13 @@
  * :cw open the quickfix list to see results, this is global
  * :lw open the location list (for when you use lvimgrep), this is local to the current buffer.
 
+## Substitute in visual block selection
+ * Perform selection then :B cmd
+ * e.g. :B s/pattern/becomes/
+
+## Search in visual block
+ * Perform selection the :S pattern
+
 ## Search and Replace Across Files
  * You need to use the arglist for this:
 ```

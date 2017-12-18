@@ -30,6 +30,8 @@ if has('gui_running')
     Plugin 'tpope/vim-surround'
     " Adds functionality to easily comment blocks of code
     Plugin 'tpope/vim-commentary'
+    " Makes substitutions work properly for visual blocks.
+    Plugin 'vim-scripts/vis'
     call vundle#end()
 endif
 
