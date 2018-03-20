@@ -44,6 +44,9 @@ let g:ctrlp_match_window = 'results:100'
 " Add VCS support to vim-airline plugin
 let g:airline#extensions#branch#use_vcscommand = 1
 
+" populate fonts dictionary for airline plugin
+let g:airline_powerline_fonts = 1
+
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -93,7 +96,7 @@ set iskeyword-=_
 if has("win32")
     set guifont=Consolas:h10
 else
-    set guifont=Inconsolata\ 9
+    set guifont=Ubuntu\ Mono\ 11
 endif
 
 " Open vimtips rather than help when F1 pressed.
