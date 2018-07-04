@@ -41,11 +41,14 @@ filetype plugin indent on " required by vundle
 " 10
 let g:ctrlp_match_window = 'results:100'
 
+set encoding=utf-8
+
 " Add VCS support to vim-airline plugin
 let g:airline#extensions#branch#use_vcscommand = 1
 
 " populate fonts dictionary for airline plugin
 let g:airline_powerline_fonts = 1
+let g:aurline_theme='powerlineish'
 
 set tabstop=4
 set shiftwidth=4
@@ -130,6 +133,12 @@ augroup highlightlonglines
     autocmd FileType python,cpp call matchadd('ColorColumn', '\%101v', 100)
 augroup END
 
+" Enable syntax highlighting for JSON files
+autocmd BufNewFile,BufRead *.json set ft=javascript
+
 " Show undesirable characters
-set listchars=tab:>>,nbsp:_,trail:.
+set listchars=tab:>>,nbsp:_,trail:~
 set list
+
+" Setup tag files for perl
+set tags+=~/.ptags
